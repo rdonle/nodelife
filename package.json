@@ -16,7 +16,7 @@
       "test": "tsc && mocha dist/**/*.spec.js",
       "lint": "eslint src --ext ts",
       "tsc": "tsc",
-      "start": "node index.js"
+      "start": "tsc && node index.js"
     },
   "author": "Rob Donle",
   "license": "ISC",
