@@ -7,7 +7,14 @@ export class Life {
 
   // Takes a grid in a variety of forms and returns the grid format that our routines expect.
   grid_cleanup(cleanme): number[][] {
+    if (typeof(cleanme) == "string") {
+      cleanme = JSON.parse(cleanme);
+    }
     return cleanme;
+  }
+
+  describe() {
+    return this.grid;
   }
 
   print() {
@@ -76,6 +83,7 @@ export class Life {
     })
 
     this.grid = new_grid;
+    return new_grid;
   }
 }
 

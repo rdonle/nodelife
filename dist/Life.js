@@ -7,7 +7,13 @@ class Life {
     }
     // Takes a grid in a variety of forms and returns the grid format that our routines expect.
     grid_cleanup(cleanme) {
+        if (typeof (cleanme) == "string") {
+            cleanme = JSON.parse(cleanme);
+        }
         return cleanme;
+    }
+    describe() {
+        return this.grid;
     }
     print() {
         this.grid.forEach(function (row) {
@@ -69,6 +75,7 @@ class Life {
             row_idx++;
         });
         this.grid = new_grid;
+        return new_grid;
     }
 }
 exports.Life = Life;
